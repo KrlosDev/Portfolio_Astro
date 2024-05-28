@@ -1,0 +1,6 @@
+.time-line-container>div:last-child .education__time>.education__line {
+    display: none;
+}
+.pattern{
+    background-image: radial-gradient(ellipse 80% 80% at 50% -20%, #2423584d, #fff0);
+}
