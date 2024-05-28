@@ -133,10 +133,6 @@ Include `BaseLayout` in each page you add and `PostLayout` to your post pages.
 
 The BaseLayout defines a general template for each new webpage you want to add. It imports constants SITE_TITLE and SITE_DESCRIPTION which can be modified in the ```../config``` folder. Data placed there can be imported anywhere using import. 
 
-### Content
-
-You can add a [content collection](https://docs.astro.build/en/guides/content-collections/) in `/content/' folder, you will need add it at config.ts.
-
 #### config.ts
 
 Where you need to define your content collections, we define our content schemas too.
