@@ -5,13 +5,13 @@
 Run the following command in your terminal
 
 ```bash
-pnpm install
+npm install
 ```
 
 Once the packages are installed you are ready to run astro. Astro comes with a built-in development server that has everything you need for project development. The astro dev command will start the local development server so that you can see your new website in action for the very first time.
 
 ```bash
-pnpm run dev
+npm run dev
 ```
 
 ## Tech Stack
@@ -132,10 +132,6 @@ For more details, see the [astro components](https://docs.astro.build/en/core-co
 Include `BaseLayout` in each page you add and `PostLayout` to your post pages.
 
 The BaseLayout defines a general template for each new webpage you want to add. It imports constants SITE_TITLE and SITE_DESCRIPTION which can be modified in the ```../config``` folder. Data placed there can be imported anywhere using import. 
-
-### Content
-
-You can add a [content collection](https://docs.astro.build/en/guides/content-collections/) in `/content/' folder, you will need add it at config.ts.
 
 #### config.ts
 
