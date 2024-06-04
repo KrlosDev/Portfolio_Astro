@@ -15,7 +15,6 @@ const {
   sideBarActiveItemID,
   ogType,
 } = Astro.props;
-
 ---
 
 <!doctype html>
@@ -30,10 +29,10 @@ const {
     />
     {TRANSITION_API && <ViewTransitions />}
   </head>
-  <body>
-    <div class="bg-base-100 drawer lg:drawer-closed pattern">
+  <body class="background">
+    <div class="drawer lg:drawer-closed pattern">
       <input id="my-drawer" type="checkbox" class="drawer-toggle" />
-      <div class="drawer-content ">
+      <div class="drawer-content">
         <Header title={SITE_TITLE} />
         <div class="md:flex md:justify-center">
           <main class="p-6 pt-10 lg:max-w-[900px] max-w-[100vw]">
@@ -45,7 +44,15 @@ const {
       {includeSidebar && <SideBar sideBarActiveItemID={sideBarActiveItemID} />}
     </div>
     <script>
-
+      document.addEventListener("mousemove", function (event) {
+        const rect = document.documentElement.getBoundingClientRect();
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        const offsetX =((event.clientX + window.scrollX - centerX) / rect.width) * 100 + 50;
+        const offsetY =((event.clientY + window.scrollY - centerY) / rect.height) * 100 + 50;
+        document.documentElement.style.setProperty("--cursor-x", offsetX + "%");
+        document.documentElement.style.setProperty("--cursor-y", offsetY + "%");
+      });
     </script>
   </body>
 </html>
