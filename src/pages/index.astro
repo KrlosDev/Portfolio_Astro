@@ -16,42 +16,41 @@ import HorizontalCard from "../components/HorizontalCard.astro";
     </div>
     <div class="mt-8">
       <a
-        class="btn"
+        class="btn btn-success btn-outline"
         href="https://www.linkedin.com/in/carlosabh/"
         target="_blank"
       >
         Let's connect!</a
       >
-      <a href="#" target="_blank" class="btn btn-outline ml-5"> Download CV </a>
+      <a href="/CarlosBarahona_cv.pdf" target="_blank" class="btn btn-outline ml-5"> Download CV </a>
     </div>
   </div>
 
   <div>
     <div class="text-3xl w-full font-bold mb-2">
-      My lastest projects {"</>"}
+      Lastest projects {"</>"}
     </div>
   </div>
 
   <HorizontalCard
-    title="Demo Project 1"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-    badge="NEW"
+  title="E-Commerce Platform"
+  img="/e-commerce.png"
+  desc="E-Commerce platform built with the MERN stack & Redux. It includes a full-featured shopping cart with PayPal & credit/debit payments."
+  url="https://github.com/KrlosDev/customKicks_v2_paypal"
+  badge="NEW"
+/>
+  <div class="divider my-0"></div>
+  <HorizontalCard
+    title="ZTOK Theme"
+    img="/ztok.png"
+    desc="A Visual Estudio Code theme is designed to provide a visually appealing and comfortable coding environment with a mix of earthy ochers and calming greens inspired in The legend of zelda tears of the kingdom."
+    url="https://github.com/KrlosDev/ztok"
   />
   <div class="divider my-0"></div>
   <HorizontalCard
-    title="Demo Project 2"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-  />
-  <div class="divider my-0"></div>
-  <HorizontalCard
-    title="Demo Project 3"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-    badge="FOSS"
+    title="Social Express"
+    img="/social.png"
+    desc="Social Express is a social media web application built using the MERN stack (MongoDB, Express.js, React, Node.js). This application allows users to create accounts, post updates, and interact with other users in a social network environment."
+    url="https://github.com/KrlosDev/Social-Media-App/"
   />
 </BaseLayout>

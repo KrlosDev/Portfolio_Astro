@@ -5,28 +5,32 @@ import HorizontalCard from "../components/HorizontalCard.astro";
 
 <BaseLayout title = "Projects" sideBarActiveItemID="projects">
   <div>
-    <div class="text-3xl w-full font-bold mb-5">Projects Header</div>
+    <div class="text-3xl w-full font-bold mb-5">Featured Projects</div>
   </div>
 
   <HorizontalCard
-    title="Demo Project 1"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-    badge="NEW"
+    title="GTP-3.5-API-Codex-App"
+    img="/gpt-codex.png"
+    desc="Web application that utilizes the OpenAI GPT-3 Codex API to provide code generation and completion functionalities."
+    url="https://github.com/KrlosDev/GTP-3-API-Codex-App"
+    tags={["VanillaJS"]}
   />
   <div class="divider my-0"></div>
+
   <HorizontalCard
-    title="Demo Project 2"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
+    title="Real Time Chat App"
+    img="/mern-chat.png"
+    desc="A full-stack chat application built using the MERN stack (MongoDB, Express.js, React, Node.js). The chat application is designed with various features to enhance user experience, including real-time updates using WebSockets, online status indicators, file uploads/attachments, and auto-scrolling, among others."
+    url="https://github.com/KrlosDev/mern-chat"
+    tags={["WebSockets"]}
   />
+  <div class="divider my-0"></div>
 
-  <div>
+  <div>More coming soon!</div>
+  <!-- <div>
     <div class="text-3xl w-full font-bold mb-5 mt-10">Projects Header</div>
-  </div>
-
+  </div> -->
+<!-- 
   <HorizontalCard
     title="Demo Project 3"
     img="/post_img.webp"
@@ -47,5 +51,5 @@ import HorizontalCard from "../components/HorizontalCard.astro";
     img="/post_img.webp"
     desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
     url="#"
-  />
+  /> -->
 </BaseLayout>
