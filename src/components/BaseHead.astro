@@ -16,6 +16,11 @@ const { title, description, ogType = 'website' } = Astro.props;
 <!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="description" content={description}>
+<meta name="keywords" content="software engineers, software developer, programming software, carlos barahona">
+<meta http-equiv="Content-Language" content="en">
+<meta name="author" content="Carlos Barahona">
+<meta name="googlebot" content="index, follow">
 <link rel="icon" type="image/svg+xml" href="/logo_dark.png" />
 <meta name="generator" content={Astro.generator} />
 
@@ -29,10 +34,13 @@ const { title, description, ogType = 'website' } = Astro.props;
 <meta property="og:url" content={Astro.url} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
+<meta property="og:image" content="/logo_dark.png">
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:url" content={Astro.url} />
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
+<meta name="twitter:image" content="/logo_dark.png">
+
 
