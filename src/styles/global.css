@@ -1,9 +1,13 @@
-.time-line-container>div:last-child .education__time>.education__line {
-    display: none;
+.time-line-container > div:last-child .education__time > .education__line {
+  display: none;
 }
 .pattern {
-    background: radial-gradient(400px at var(--cursor-x) var(--cursor-y), rgba(59, 88, 166, 0.1), transparent 50%);
-  }
-  body::-webkit-scrollbar {
-    display: none;
-  }
+  background: radial-gradient(
+    400px at var(--cursor-x) var(--cursor-y),
+    rgba(59, 88, 166, 0.1),
+    transparent 50%
+  );
+}
+body::-webkit-scrollbar {
+  display: none;
+}
