@@ -1,5 +1,6 @@
 {
   "name": "portfolio",
+  "packageManager": "pnpm@10.7.0",
   "description": "",
   "type": "module",
   "version": "3.0.0",
