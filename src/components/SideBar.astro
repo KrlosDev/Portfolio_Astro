@@ -2,6 +2,7 @@
 import SideBarFooter from "./SideBarFooter.astro";
 import { Image } from "astro:assets";
 import SideBarMenu from "./SideBarMenu.astro";
+import logo from "../images/logo_dark.png";
 const { sideBarActiveItemID } = Astro.props;
 ---
 
@@ -12,7 +13,7 @@ const { sideBarActiveItemID } = Astro.props;
       <a href="/">
         <div class="avatar transition ease-in-out hover:scale-[102%] block m-auto">
           <div class="w-[4rem]">
-            <Image loading={"eager"} format="png" width={100} height={100} src="/logo_dark.png" alt="Logo" />
+            <Image loading={"eager"} format="png" width={100} height={100} src={logo} alt="Logo" />
           </div>
         </div>
       </a>

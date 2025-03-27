@@ -1,6 +1,9 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import HorizontalCard from "../components/HorizontalCard.astro";
+import ecommereceImg from "../images/e-commerce.png";
+import ztokImg from "../images/ztok.png";
+import socialImg from "../images/social.png";
 ---
 
 <BaseLayout sideBarActiveItemID="home">
@@ -34,7 +37,7 @@ import HorizontalCard from "../components/HorizontalCard.astro";
 
   <HorizontalCard
   title="E-Commerce Platform"
-  img="/e-commerce.png"
+  img={ecommereceImg}
   text="E-Commerce platform built with the MERN stack & Redux. It includes a full-featured shopping cart with PayPal & credit/debit payments."
   url="https://github.com/KrlosDev/customKicks_v2_paypal"
   badge="NEW"
@@ -42,14 +45,14 @@ import HorizontalCard from "../components/HorizontalCard.astro";
   <div class="divider my-0"></div>
   <HorizontalCard
     title="ZTOK Theme"
-    img="/ztok.png"
+    img={ztokImg}
     text="A Visual Estudio Code theme is designed to provide a visually appealing and comfortable coding environment with a mix of earthy ochers and calming greens inspired in The legend of zelda tears of the kingdom."
     url="https://github.com/KrlosDev/ztok"
   />
   <div class="divider my-0"></div>
   <HorizontalCard
     title="Social Express"
-    img="/social.png"
+    img={socialImg}
     text="Social Express is a social media web application built using the MERN stack (MongoDB, Express.js, React, Node.js). This application allows users to create accounts, post updates, and interact with other users in a social network environment."
     url="https://github.com/KrlosDev/Social-Media-App/"
   />

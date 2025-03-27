@@ -1,6 +1,8 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import HorizontalCard from "../components/HorizontalCard.astro";
+import gptCodexImg from "../images/gpt-codex.png";
+import mernChatImg from "../images/mern-chat.png";
 ---
 
 <BaseLayout title = "Projects" sideBarActiveItemID="projects">
@@ -11,7 +13,7 @@ import HorizontalCard from "../components/HorizontalCard.astro";
 
   <HorizontalCard
     title="GTP-3.5-API-Codex-App"
-    img="/gpt-codex.png"
+    img={gptCodexImg}
     text="Web application that utilizes the OpenAI GPT-3 Codex API to provide code generation and completion functionalities."
     url="https://github.com/KrlosDev/GTP-3-API-Codex-App"
     tags={["VanillaJS"]}
@@ -20,7 +22,7 @@ import HorizontalCard from "../components/HorizontalCard.astro";
 
   <HorizontalCard
     title="Real Time Chat App"
-    img="/mern-chat.png"
+    img={mernChatImg}
     text="A full-stack chat application built using the MERN stack (MongoDB, Express.js, React, Node.js). The chat application is designed with various features to enhance user experience, including real-time updates using WebSockets, online status indicators, file uploads/attachments, and auto-scrolling, among others."
     url="https://github.com/KrlosDev/mern-chat"
     tags={["WebSockets"]}
