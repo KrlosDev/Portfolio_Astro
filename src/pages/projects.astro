@@ -6,10 +6,14 @@ import mernChatImg from "../images/mern-chat.png";
 import socialImg from "../images/social.png";
 ---
 
-<BaseLayout title = "Projects" sideBarActiveItemID="projects">
+<BaseLayout
+  title="Projects — Carlos Barahona | Software Engineer"
+  description="Software projects built by Carlos Alberto Barahona Herrera (KrlosDev): MERN stack applications, an e-commerce platform, a fitness app and developer tooling."
+  sideBarActiveItemID="projects"
+>
   <div class="mb-5 md:h-dvh">
   <div>
-    <div class="text-3xl w-full font-bold mb-5">Featured Projects</div>
+    <h1 class="text-3xl w-full font-bold mb-5">Featured Projects</h1>
   </div>
   <HorizontalCard
     title="Social Express"
@@ -17,6 +21,7 @@ import socialImg from "../images/social.png";
     text="Social Express is a social media web application built using the MERN stack (MongoDB, Express.js, React, Node.js). This application allows users to create accounts, post updates, and interact with other users in a social network environment."
     url="https://github.com/KrlosDev/Social-Media-App/"
   />
+  <div class="divider my-0"></div>
   <HorizontalCard
     title="GTP-3.5-API-Codex-App"
     img={gptCodexImg}

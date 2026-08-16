@@ -3,9 +3,17 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import TimeLineElement from "../components/cv/TimeLine.astro";
 ---
 
-<BaseLayout title="Resume" sideBarActiveItemID="cv">
+<BaseLayout
+  title="Resume — Carlos Barahona | Software Engineer"
+  description="Resume of Carlos Alberto Barahona Herrera (KrlosDev): software engineering roles, education and certifications in React, Vue, Node.js, AWS and the Claude API."
+  ogType="profile"
+  sideBarActiveItemID="cv"
+>
+  <h1 class="text-4xl w-full font-bold mb-2">Carlos Alberto Barahona Herrera</h1>
+  <p class="text-lg mb-8">Software Engineer — Panama</p>
+
   <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Profile</div>
+    <h2 class="text-3xl w-full font-bold">Profile</h2>
   </div>
 
   <div class="mb-10">
@@ -17,7 +25,7 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
   </div>
 
   <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Work Experience</div>
+    <h2 class="text-3xl w-full font-bold">Work Experience</h2>
   </div>
 
   <div class="time-line-container mb-10">
@@ -85,7 +93,7 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
         </li>
       </ul>
     </TimeLineElement>
-    <!-- <TimeLineElement
+    <TimeLineElement
       title="Risk Analyst/GPS Analyst"
       subtitle="From 04/2018 to 03/2021 at Si Panama"
     >
@@ -105,11 +113,11 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
           those locations.
         </li>
       </ul>
-    </TimeLineElement> -->
+    </TimeLineElement>
   </div>
 
   <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Education</div>
+    <h2 class="text-3xl w-full font-bold">Education</h2>
   </div>
 
   <div class="time-line-container grid gap-4 mb-5">
@@ -123,10 +131,28 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
     /> -->
   </div>
   <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Certifications</div>
+    <h2 class="text-3xl w-full font-bold">Certifications</h2>
   </div>
 
   <ul class="list-disc mx-6 mb-10 grid gap-2">
+    <li>
+      <a href="https://verify.skilljar.com/c/8vihbzpic374" target="_blank"> Model Context Protocol: Advanced Topics - Anthropic</a>
+    </li>
+    <li>
+      <a href="https://verify.skilljar.com/c/9f8vfe9thmgs" target="_blank"> Introduction to Claude Cowork - Anthropic</a>
+    </li>
+    <li>
+      <a href="https://verify.skilljar.com/c/qj5z4votnhxw" target="_blank"> Building with the Claude API - Anthropic</a>
+    </li>
+    <li>
+      <a href="https://verify.skilljar.com/c/qqojxczqjbxj" target="_blank"> Claude Code in Action - Anthropic</a>
+    </li>
+    <li>
+      <a href="https://verify.skilljar.com/c/a8r3au695uab" target="_blank"> Introduction to Model Context Protocol - Anthropic</a>
+    </li>
+    <li>
+      <a href="https://verify.skilljar.com/c/csxvbehx73kb" target="_blank"> Introduction to Agent Skills - Anthropic</a>
+    </li>
     <li>
       <a href="https://www.freecodecamp.org/certification/KrlosDev/javascript-algorithms-and-data-structures-v8" target="_blank"> Javascript algorithms and data structures - FreeCodeCamp</a>
     </li>

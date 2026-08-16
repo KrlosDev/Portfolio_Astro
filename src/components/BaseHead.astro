@@ -2,6 +2,7 @@
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
 import '../styles/global.css';
+import { SITE_URL, SITE_TITLE, PERSON } from '../config';
 
 export interface Props {
 	title: string;
@@ -10,18 +11,78 @@ export interface Props {
 	ogType?: string;
 }
 
-const { title, description, ogType = 'website' } = Astro.props;
+const { title, description, image = PERSON.image, ogType = 'website' } = Astro.props;
+
+// Search engines and social crawlers need absolute URLs, and a canonical that
+// ignores query strings so duplicates collapse onto one address.
+const canonicalURL = new URL(Astro.url.pathname, SITE_URL);
+const socialImageURL = new URL(image, SITE_URL);
+
+const personSchema = {
+	'@type': 'Person',
+	'@id': `${SITE_URL}/#person`,
+	name: PERSON.name,
+	alternateName: PERSON.alternateNames,
+	givenName: PERSON.givenName,
+	familyName: PERSON.familyName,
+	jobTitle: PERSON.jobTitle,
+	description: `${PERSON.name} is a software engineer based in Panama specialising in web application development.`,
+	url: `${SITE_URL}/`,
+	image: new URL(PERSON.image, SITE_URL).href,
+	sameAs: PERSON.sameAs,
+	worksFor: { '@type': 'Organization', name: PERSON.worksFor },
+	alumniOf: { '@type': 'CollegeOrUniversity', name: PERSON.alumniOf },
+	address: {
+		'@type': 'PostalAddress',
+		addressLocality: PERSON.locality,
+		addressCountry: PERSON.country,
+	},
+	knowsAbout: PERSON.knowsAbout,
+	hasCredential: PERSON.credentials.map((credential) => ({
+		'@type': 'EducationalOccupationalCredential',
+		name: credential.name,
+		credentialCategory: 'certificate',
+		url: credential.url,
+		dateCreated: credential.date,
+		recognizedBy: { '@type': 'Organization', name: credential.issuer },
+	})),
+};
+
+const schema = {
+	'@context': 'https://schema.org',
+	'@graph': [
+		personSchema,
+		{
+			'@type': 'WebSite',
+			'@id': `${SITE_URL}/#website`,
+			url: `${SITE_URL}/`,
+			name: SITE_TITLE,
+			description,
+			inLanguage: 'en',
+			publisher: { '@id': `${SITE_URL}/#person` },
+		},
+		{
+			'@type': 'WebPage',
+			'@id': `${canonicalURL.href}#webpage`,
+			url: canonicalURL.href,
+			name: title,
+			description,
+			isPartOf: { '@id': `${SITE_URL}/#website` },
+			about: { '@id': `${SITE_URL}/#person` },
+			inLanguage: 'en',
+		},
+	],
+};
 ---
 
 <!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<meta name="description" content={description}>
-<meta name="keywords" content="software engineers, software developer, programming software, carlos barahona">
 <meta http-equiv="Content-Language" content="en">
-<meta name="author" content="Carlos Barahona">
-<meta name="googlebot" content="index, follow">
-<link rel="icon" type="image/svg+xml" href="/logo_dark.png" />
+<meta name="author" content={PERSON.name}>
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<link rel="icon" type="image/png" href="/logo_dark.png" />
+<link rel="canonical" href={canonicalURL} />
 <meta name="generator" content={Astro.generator} />
 
 <!-- Primary Meta Tags -->
@@ -31,16 +92,20 @@ const { title, description, ogType = 'website' } = Astro.props;
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content={ogType} />
-<meta property="og:url" content={Astro.url} />
+<meta property="og:url" content={canonicalURL} />
+<meta property="og:site_name" content={PERSON.name} />
+<meta property="og:locale" content="en_US" />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
-<meta property="og:image" content="/logo_dark.png">
+<meta property="og:image" content={socialImageURL} />
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content={Astro.url} />
+<meta property="twitter:url" content={canonicalURL} />
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
-<meta name="twitter:image" content="/logo_dark.png">
+<meta name="twitter:image" content={socialImageURL} />
 
-
+<!-- Structured data: tells search engines and AI answer engines that every
+     spelling of the name refers to one person, linked to the profiles below. -->
+<script type="application/ld+json" set:html={JSON.stringify(schema)} is:inline />
